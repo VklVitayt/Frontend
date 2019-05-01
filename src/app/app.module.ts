@@ -11,7 +11,7 @@ import {HttpService} from './services/http/http.service';
 import {NgbAlertModule, NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {ShowEmployeeComponent} from './components/showEmployees/showEmployee.component';
 import {HomeComponent} from './components/home/home.component';
-
+import {CarouselBasicComponentComponent} from './components/carousel-basic-component/carousel-basic-component.component';
 
 const appRouter: Routes = [
     {path: '', component: HomeComponent},
@@ -25,6 +25,7 @@ const appRouter: Routes = [
         HomeComponent,
         EmployeeComponent,
         ShowEmployeeComponent,
+        CarouselBasicComponentComponent,
     ],
     imports: [
         BrowserModule,
