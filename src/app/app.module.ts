@@ -12,10 +12,12 @@ import {NgbAlertModule, NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-b
 import {ShowEmployeeComponent} from './components/showEmployees/showEmployee.component';
 import {HomeComponent} from './components/home/home.component';
 import {CarouselBasicComponentComponent} from './components/carousel-basic-component/carousel-basic-component.component';
+import {CatalogComponent} from './components/catalog/catalog.component';
 
 const appRouter: Routes = [
     {path: '', component: HomeComponent},
     {path: 'employees', component: EmployeeComponent},
+    {path: 'catalog', component: CatalogComponent},
     {path: 'showEmployees', component: ShowEmployeeComponent},
 ];
 
@@ -26,6 +28,7 @@ const appRouter: Routes = [
         EmployeeComponent,
         ShowEmployeeComponent,
         CarouselBasicComponentComponent,
+        CatalogComponent
     ],
     imports: [
         BrowserModule,
