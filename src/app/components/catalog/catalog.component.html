@@ -7,16 +7,21 @@
 <p class="k">СТОЛЛЫ</p>
 <p class="filtr">Фильтры</p>
 <p class="price">Цена</p>
-<<div class="card" style="width: 18rem;">
-    <img src="assets/img/kreslo.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title" style="text-align: center;">Кресло</h5>
-
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item" style="text-align: center;">$50</li>
-    </ul>
-    <div class="card-body">
-        <p href="#" class="card-link" style="text-align: center;">Добавить в корзину</p>
-    </div>
+<div class="container">
+    <br>
+    <table class="table table-bordered table-dark table-sm">
+        <tr>
+            <th>ID</th>
+            <th>Тип мебели</th>
+            <th>Название</th>
+            <th>Цена</th>
+        </tr>
+        <tr *ngFor="let product of products">
+            <td>{{product?.idProduct}}</td>
+            <td>{{product?.furnitureType}}</td>
+            <td>{{product?.title}}</td>
+            <td>{{product?.price}}</td>
+        </tr>
+    </table>
+    <br>
 </div>
