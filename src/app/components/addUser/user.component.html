@@ -1,0 +1,84 @@
+<form style="margin-top: 50px">
+    <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Имя</label>
+            <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" id="formGroupExampleInput">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Фамилия</label>
+            <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" id="formGroupExampleInput2" >
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Телефон</label>
+            <input type="text" class="form-control" [(ngModel)]="user.phoneNumber" name="phoneNumber" id="formGroupExampleInput3" >
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Логин</label>
+            <input type="text" class="form-control" [(ngModel)]="user.login" name="login" id="formGroupExampleInput4">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Пароль</label>
+            <input type="text" class="form-control" [(ngModel)]="user.password" name="password" id="formGroupExampleInput5" >
+        </div>
+    </form>
+<button class="btn btn-dark" (click)="insertUser(user)">Добавить нового пользователя</button>
+</form>
+    <div class="form-group" style="margin-left: 750px; margin-top:-514px ">
+        <button class="btn btn-dark" (click)="showEdit()">Поиск пользователя по ID</button>
+        <br>
+        <form *ngIf="isEdit">
+            <br>
+        <input type="text"  placeholder="Напишите ID пользователя"   class="form-control"  [(ngModel)]="user.idUser" name="findID" id="findID">
+            <br>
+            <button class="btn btn-dark" style="margin-top: 0px" (click)="getUserById(user)" (click)="showUser()">Поиск</button>
+            <form *ngIf="isUser">
+                <br>
+                <table class="table table-bordered table-dark table-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Номер телефона</th>
+                        <th>Логин</th>
+                        <th>Пароль</th>
+                    </tr>
+                    <td>{{findUser?.idUser}}</td>
+                    <td>{{findUser?.firstName}}</td>
+                    <td>{{findUser?.lastName}}</td>
+                    <td>{{findUser?.phoneNumber}}</td>
+                    <td>{{findUser?.login}}</td>
+                    <td>{{findUser?.password}}</td>
+                </table>
+            </form>
+        </form>
+        <button class="btn btn-dark" (click)="showDelete()">Удаление пользователя по ID</button>
+        <form *ngIf="isDelete">
+            <br>
+            <input type="text"  placeholder="Напишите ID пользователя"   class="form-control"  [(ngModel)]="user.idUser" name="deleteID" id="deleteID">
+            <br>
+            <button class="btn btn-dark" style="margin-top: 0px" (click)="deleteUserById(user)" onClick="window.location.reload();">Удалить</button>
+        </form>
+        </div>
+    <div class="container">
+        <br>
+        <table class="table table-bordered table-dark table-sm">
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Номер телефона</th>
+                <th>Логин</th>
+                <th>Пароль</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user?.idUser}}</td>
+                <td>{{user?.firstName}}</td>
+                <td>{{user?.lastName}}</td>
+                <td>{{user?.phoneNumber}}</td>
+                <td>{{user?.login}}</td>
+                <td>{{user?.password}}</td>
+            </tr>
+        </table>
+        <br>
+    </div>
+

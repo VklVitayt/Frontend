@@ -1,0 +1,76 @@
+<form style="margin-top: 50px">
+    <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Тип мебели</label>
+            <input type="text" class="form-control" [(ngModel)]="product.furnitureType" name="firstName" id="formGroupExampleInput">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Название</label>
+            <input type="text" class="form-control" [(ngModel)]="product.title" name="lastName" id="formGroupExampleInput2" >
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Количество на складе</label>
+            <input type="text" class="form-control" [(ngModel)]="product.count" name="phoneNumber" id="formGroupExampleInput3" >
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Цена</label>
+            <input type="text" class="form-control" [(ngModel)]="product.price" name="login" id="formGroupExampleInput4">
+        </div>
+    </form>
+    <button class="btn btn-dark" (click)="insertProduct(product)">Добавить новый товар</button>
+</form>
+<div class="form-group" style="margin-left: 750px; margin-top:-427px ">
+    <button class="btn btn-dark" (click)="showEditP()">Поиск товара по ID</button>
+    <br>
+    <form *ngIf="isEditP">
+        <br>
+        <input type="text"  placeholder="Напишите ID товара"   class="form-control"  [(ngModel)]="product.idProduct" name="firstName" id="findID">
+        <br>
+        <button class="btn btn-dark" style="margin-top: 0px" (click)="getProductById(product)" (click)="showProduct()">Поиск</button>
+        <form *ngIf="isProduct">
+            <br>
+            <table class="table table-bordered table-dark table-sm">
+                <tr>
+                    <th>ID</th>
+                    <th>Тип мебели</th>
+                    <th>Название</th>
+                    <th>Количество на складе</th>
+                    <th>Цена</th>
+                </tr>
+                <td>{{findProduct?.idProduct}}</td>
+                <td>{{findProduct?.furnitureType}}</td>
+                <td>{{findProduct?.title}}</td>
+                <td>{{findProduct?.count}}</td>
+                <td>{{findProduct?.price}}</td>
+            </table>
+        </form>
+    </form>
+    <button class="btn btn-dark" (click)="showDeleteP()">Удаление товара по ID</button>
+    <form *ngIf="isDeleteP">
+        <br>
+        <input type="text"  placeholder="Напишите ID товара"   class="form-control"  [(ngModel)]="product.idProduct" name="firstName" id="deleteID">
+        <br>
+        <button class="btn btn-dark" style="margin-top: 0px" (click)="deleteProductById(product)" onClick="window.location.reload();">Удалить</button>
+    </form>
+</div>
+<div class="container">
+    <br>
+    <table class="table table-bordered table-dark table-sm">
+        <tr>
+            <th>ID</th>
+            <th>Тип мебели</th>
+            <th>Название</th>
+            <th>Количество на складе</th>
+            <th>Цена</th>
+        </tr>
+        <tr *ngFor="let product of products">
+            <td>{{product?.idProduct}}</td>
+            <td>{{product?.furnitureType}}</td>
+            <td>{{product?.title}}</td>
+            <td>{{product?.count}}</td>
+            <td>{{product?.price}}</td>
+        </tr>
+    </table>
+    <br>
+</div>
+

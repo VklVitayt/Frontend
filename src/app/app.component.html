@@ -15,8 +15,8 @@
               <div ngbDropdown class="d-inline-block">
                   <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>МЕНЮ</button>
                   <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                      <button ngbDropdownItem>Работа с пользователями</button>
-                      <button ngbDropdownItem>Работа с товарами</button>
+                      <button ngbDropdownItem routerLink="/addUser">Работа с пользователями</button>
+                      <button ngbDropdownItem routerLink="/product">Работа с товарами</button>
                   </div>
               </div>
           </div>
@@ -27,6 +27,4 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
-<footer id="6">
-    2019 Khamrytseleva & Kabushkov Все права защищены
-</footer>
+

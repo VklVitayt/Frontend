@@ -2,17 +2,17 @@ export class Employee {
     idEmployee: any;
     firstName: string;
     lastName: string;
-    idDepartment: any;
-    jobTitle: string;
-    gender: any;
-    date: any;
+    position: string;
+    phoneNumber: string;
+    login: string;
+    password: string;
     constructor() {
         this.idEmployee = '';
         this.firstName = '';
         this.lastName = '';
-        this.idDepartment = '';
-        this.jobTitle = '';
-        this.gender = '';
-        this.date = '';
+        this.position = '';
+        this.phoneNumber = '';
+        this.login = '';
+        this.password = '';
     }
 }
