@@ -1,9 +1,9 @@
 export class Product {
     idProduct: any;
-    furnitureType: string;
+    furnitureType: any;
     title: string;
     count: any;
-    price: string;
+    price: any;
     constructor() {
         this.idProduct = '';
         this.furnitureType = '';

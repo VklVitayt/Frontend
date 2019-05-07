@@ -9,12 +9,24 @@
       <a class="nav-link" href = "#2" routerLinkActive="active" >Наша Продукция</a>
       <a class="nav-link" routerLink="/catalog" routerLinkActive="active" >Каталог</a>
       <a class="nav-link"  href = "#1" routerLinkActive="active">О Нас</a>
-      <a class="nav-link" routerLink="/showEmployees" routerLinkActive="active">Контакты</a>
-
+      <a class="nav-link" href = "#6" routerLinkActive="active">Контакты</a>
+      <div class="row">
+          <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>МЕНЮ</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem>Работа с пользователями</button>
+                      <button ngbDropdownItem>Работа с товарами</button>
+                  </div>
+              </div>
+          </div>
+      </div>
       <app-modal-window></app-modal-window>
       <!--<a class="nav-link" routerLink="/employees" routerLinkActive="active" >Add employee</a>-->
       <!--<a class="nav-link" routerLink="/showEmployees" routerLinkActive="active">Show employees</a>-->
   </div>
 </nav>
-
 <router-outlet></router-outlet>
+<footer id="6">
+    2019 Khamrytseleva & Kabushkov Все права защищены
+</footer>

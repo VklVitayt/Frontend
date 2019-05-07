@@ -1,27 +1,35 @@
-<img src="assets/img/catalog.png" alt="o nas" style="display: block;height:auto; width: 100%;">
+<!--<img src="assets/img/catalog.png" alt="o nas" style="display: block;height:auto; width: 100%;">-->
 <p class="kat">Категории</p>
 <p class="new">НОВЫЕ ПОСТУПЛЕНИЯ</p>
-<p class="k">КРЕСЛЫ И ДИВАНЫ</p>
-<p class="k">СВЕТИЛЬНИКИ</p>
-<p class="k">СТЕЛЛАЖИ</p>
-<p class="k">СТОЛЛЫ</p>
+<button type="button" class="btn btn-link"  (click)="showEdit()">КРЕСЛА И ДИВАНЫ</button>
+<br>
+<button type="button" class="btn btn-link"  (click)="showEdit()">СВЕТИЛЬНИКИ</button>
+<br>
+<button type="button" class="btn btn-link"  (click)="showEdit()">СТЕЛЛАЖИ</button>
+<br>
+<button type="button" class="btn btn-link"  (click)="showEdit()">СТОЛЛЫ</button>
 <p class="filtr">Фильтры</p>
-<p class="price">Цена</p>
+<!--<p class="price">Цена</p>-->
+<button type="button" class="btn btn-link"  (click)="showEdit()">Поиск товара по Названию</button>
 <div class="container">
     <br>
-    <table class="table table-bordered table-dark table-sm">
+    <form *ngIf="isEdit">
+    <table class="table table-bordered table table-sm">
         <tr>
             <th>ID</th>
             <th>Тип мебели</th>
             <th>Название</th>
             <th>Цена</th>
+            <th class="white"></th>
         </tr>
         <tr *ngFor="let product of products">
             <td>{{product?.idProduct}}</td>
             <td>{{product?.furnitureType}}</td>
             <td>{{product?.title}}</td>
             <td>{{product?.price}}</td>
+            <td class="white"><button type="button" class="btn btn-outline-primary" style="margin-left: -40px">Купить</button></td>
         </tr>
     </table>
+      </form>
     <br>
 </div>

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Employee} from '../../models/employee';
-import {User} from '../../models/user';
 import {Product} from '../../models/product';
 import {HttpService} from '../../services/http/http.service';
 
@@ -14,6 +12,8 @@ export class CatalogComponent implements OnInit {
     products: Product[];
     findProduct = new Product();
     isEdit: boolean;
+    isType: any;
+    isKreslo: 'КРЕСЛА И ДИВАНЫ';
     constructor(private httpService: HttpService) { }
 
     ngOnInit(): void {
@@ -25,4 +25,21 @@ export class CatalogComponent implements OnInit {
                     console.log(error);
                 });
     }
+    // getProductByFurnitureType() {
+    //     this.httpService.getProductByFurnitureType(
+    //         'http://localhost:8080/api/product/getProductByFurnitureType/' + this.product.furnitureType, this.product.furnitureType)
+    //         .subscribe(value => {
+    //                 console.log(value);
+    //                 this.findProduct = value;
+    //             },
+    //             error => {
+    //                 console.log(error);
+    //             });
+    // }
+    showEdit() {
+        this.isEdit = !this.isEdit;
+    }
+    // showType() {
+    //     this.isType = !this.isType;
+    // }
 }

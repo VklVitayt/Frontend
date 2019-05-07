@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Employee} from '../../models/employee';
 import {User} from '../../models/user';
+import {Product} from '../../models/product';
 
 
 @Injectable({
@@ -32,6 +33,9 @@ export class HttpService {
 
     public getEmployeeById(url: string, employee: Employee): Observable<any> {
         return this.http.get(url, employee.idEmployee);
+    }
+    public getProductByFurnitureType(url: string, product: Product): Observable<any> {
+        return this.http.get(url, product.furnitureType);
     }
 }
 

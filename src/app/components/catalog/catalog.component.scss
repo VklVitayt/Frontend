@@ -1,5 +1,5 @@
 .kat{
-    margin-top: 116px;
+    margin-top: 66px;
     margin-left: 108px;
     font-size: 36px;
     font-weight: bolder;
@@ -9,11 +9,6 @@
      margin-left: 108px;
      font-size: 21px;
  }
-.k{
-    margin-top: 17px;
-    margin-left: 108px;
-    font-size: 20px;
-}
 .filtr{
      margin-top: 67px;
      margin-left: 108px;
@@ -27,7 +22,24 @@
     font-weight: bolder;
 }
 .table{
-    margin-top: -454px;
+    margin-top: -456px;
     margin-left: 170px;
 }
 
+button{
+    margin-left: 95px;
+    font-size: 20px;
+    color: black;
+}
+.white{
+    background:white;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
