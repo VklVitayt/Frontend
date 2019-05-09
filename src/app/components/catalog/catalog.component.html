@@ -7,13 +7,10 @@
 <br>
 <button type="button" class="btn btn-link"  (click)="showEdit()">СТЕЛЛАЖИ</button>
 <br>
-<button type="button" class="btn btn-link"  (click)="showEdit()">СТОЛЛЫ</button>
-<p class="filtr">Фильтры</p>
-<!--<p class="price">Цена</p>-->
-<button type="button" class="btn btn-link"  (click)="showEdit()">Поиск товара по Названию</button>
+<button type="button" class="btn btn-link"  (click)="showEdit()">СТОЛЫ</button>
 <div class="container">
     <br>
-    <form *ngIf="isEdit">
+    <form *ngIf="isEdit" style="margin-top: 217px">
     <table class="table table-bordered table table-sm">
         <tr>
             <th>ID</th>
@@ -27,10 +24,38 @@
             <td>{{product?.furnitureType}}</td>
             <td>{{product?.title}}</td>
             <td>{{product?.price}}</td>
-            <td class="white"><button type="button" class="btn btn-outline-primary" style="margin-left: -35px;font-size: 14px;">Купить</button></td>
-            <td class="white"><button type="button" class="btn btn-outline-primary" style="margin-left: -70px;font-size: 14px;">В Корзину</button></td>
+            <!--<td class="white"><button type="button" class="btn btn-outline-primary" style="margin-left: -35px;font-size: 14px;"  (click)="showCard()" >Купить</button></td>-->
+            <td class="white"><button type="button" class="btn btn-outline-primary" style="margin-left: -40px;font-size: 14px;">В Корзину</button></td>
         </tr>
     </table>
       </form>
     <br>
 </div>
+
+
+<p class="filtr">Фильтры</p>
+<button type="button" class="btn btn-link"  (click)="showEditN()">Поиск товара по Названию</button>
+<form *ngIf="isEditN">
+    <br>
+    <input type="text" style="width:255px;margin-left: 106px" placeholder="Напишите название товара"   class="form-control"  [(ngModel)]="product.title" name="findID1" id="findID1">
+    <br>
+    <button class="btn btn-dark" style="width:255px; margin-left: 106px" (click)="getProductByTitle(product)" (click)="showTitle()">Поиск</button>
+<div class="container">
+    <br>
+    <form *ngIf="isTitle" style="margin-top: 270px">
+        <table class="table table-bordered table table-sm">
+            <tr>
+                <th>ID</th>
+                <th>Тип мебели</th>
+                <th>Название</th>
+                <th>Цена</th>
+            </tr>
+            <td>{{findProduct?.idProduct}}</td>
+            <td>{{findProduct?.furnitureType}}</td>
+            <td>{{findProduct?.title}}</td>
+            <td>{{findProduct?.price}}</td>
+        </table>
+    </form>
+    <br>
+</div>
+</form>

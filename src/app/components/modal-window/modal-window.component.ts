@@ -9,9 +9,10 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./modal-window.component.scss']
 })
 export class ModalWindowComponent implements OnInit {
+    isModal: boolean;
 
-
-    constructor(private modalService: NgbModal) {}
+    constructor(private modalService: NgbModal) {
+    }
 
     ngOnInit() {
     }
@@ -23,6 +24,7 @@ export class ModalWindowComponent implements OnInit {
             console.log(`Dismissed ${this.getDismissReason(reason)}`);
         });
     }
+
     close() {
         this.modalService.dismissAll();
     }
@@ -33,10 +35,12 @@ export class ModalWindowComponent implements OnInit {
         } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
             return 'by clicking on a backdrop';
         } else {
-            return  `with: ${reason}`;
+            return `with: ${reason}`;
         }
     }
 
+    showModal() {
+        this.isModal = !this.isModal;
+    }
 }
-
 

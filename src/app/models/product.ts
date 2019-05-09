@@ -1,7 +1,7 @@
 export class Product {
     idProduct: any;
     furnitureType: any;
-    title: string;
+    title: any;
     count: any;
     price: any;
     constructor() {

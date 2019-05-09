@@ -51,6 +51,9 @@ export class HttpService {
     public getUserById(url: string, user: User): Observable<any> {
         return this.http.get(url, user.idUser);
     }
+    public getProductByTitle(url: string, product: Product): Observable<any> {
+        return this.http.get(url, product.title);
+    }
     public getProductByFurnitureType(url: string, product: Product): Observable<any> {
         return this.http.get(url, product.furnitureType);
     }

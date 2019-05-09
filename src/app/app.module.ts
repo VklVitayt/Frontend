@@ -16,6 +16,7 @@ import {CatalogComponent} from './components/catalog/catalog.component';
 import {CommonModule} from '@angular/common';
 import {ModalWindowComponent} from './components/modal-window/modal-window.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import {BuyProductComponent} from './components/buyProduct/buyProduct.component';
 
 const appRouter: Routes = [
     {path: '', component: HomeComponent},
@@ -24,6 +25,7 @@ const appRouter: Routes = [
     {path: 'product', component: ProductComponent},
     {path: 'registration', component: RegistrationComponent},
     {path: 'addUser', component: UserComponent},
+    {path: 'buyProduct', component: BuyProductComponent},
 ];
 
 @NgModule({
@@ -36,6 +38,7 @@ const appRouter: Routes = [
         CatalogComponent,
         ModalWindowComponent,
         RegistrationComponent,
+        BuyProductComponent,
     ],
     imports: [
         BrowserModule,

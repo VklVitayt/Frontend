@@ -12,8 +12,9 @@ export class CatalogComponent implements OnInit {
     products: Product[];
     findProduct = new Product();
     isEdit: boolean;
-    isType: any;
-    isKreslo: 'КРЕСЛА И ДИВАНЫ';
+    isEditN: boolean;
+    isTitle: boolean;
+    isCard: boolean;
     constructor(private httpService: HttpService) { }
 
     ngOnInit(): void {
@@ -25,21 +26,40 @@ export class CatalogComponent implements OnInit {
                     console.log(error);
                 });
     }
-    // getProductByFurnitureType() {
-    //     this.httpService.getProductByFurnitureType(
-    //         'http://localhost:8080/api/product/getProductByFurnitureType/' + this.product.furnitureType, this.product.furnitureType)
-    //         .subscribe(value => {
-    //                 console.log(value);
-    //                 this.findProduct = value;
-    //             },
-    //             error => {
-    //                 console.log(error);
-    //             });
-    // }
+    getProductByTitle() {
+        this.httpService.getProductByTitle(
+            'http://localhost:8080/api/product/getProductByTitle/' + this.product.title, this.product.title)
+            .subscribe(value => {
+                    console.log(value);
+                    this.findProduct = value;
+                },
+                error => {
+                    console.log(error);
+                });
+    }
+    getProductById() {
+        this.httpService.getProductById(
+            'http://localhost:8080/api/product/getProductById/' + this.product.idProduct, this.product.idProduct)
+            .subscribe(value => {
+                    console.log(value);
+                    console.log(this.product.idProduct);
+                    this.findProduct = value;
+                },
+                error => {
+                    console.log(error);
+                });
+    }
+
     showEdit() {
         this.isEdit = !this.isEdit;
     }
-    // showType() {
-    //     this.isType = !this.isType;
-    // }
+    showEditN() {
+        this.isEditN = !this.isEditN;
+    }
+    showTitle() {
+        this.isTitle = !this.isTitle;
+    }
+    showCard() {
+        this.isCard = !this.isCard;
+    }
 }

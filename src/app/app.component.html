@@ -4,8 +4,8 @@
     <a class="py-2" routerLink="/">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
     </a>
-    <a class="nav-link" routerLink="/" routerLinkActive="active"
-       [routerLinkActiveOptions]="{exact:true}">Главная</a>
+    <a class="nav-link" href = "#7" routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true} ">Главная</a>
       <a class="nav-link" href = "#2" routerLinkActive="active" >Наша Продукция</a>
       <a class="nav-link" routerLink="/catalog" routerLinkActive="active" >Каталог</a>
       <a class="nav-link"  href = "#1" routerLinkActive="active">О Нас</a>
@@ -17,13 +17,12 @@
                   <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                       <button ngbDropdownItem routerLink="/addUser">Работа с пользователями</button>
                       <button ngbDropdownItem routerLink="/product">Работа с товарами</button>
+                      <button ngbDropdownItem routerLink="/buyProduct">Корзина</button>
                   </div>
               </div>
           </div>
       </div>
       <app-modal-window></app-modal-window>
-      <!--<a class="nav-link" routerLink="/employees" routerLinkActive="active" >Add employee</a>-->
-      <!--<a class="nav-link" routerLink="/showEmployees" routerLinkActive="active">Show employees</a>-->
   </div>
 </nav>
 <router-outlet></router-outlet>
